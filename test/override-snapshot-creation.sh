@@ -35,7 +35,6 @@ spec:
   components:
 EOF
 
-# 使用更安全的jq处理
 echo "$COMPONENTS_JSON" | jq -r '.[] | 
 "    - name: \(.metadata.name)",
 "      containerImage: \(.status."lastPromotedImage" // .spec."containerImage")",
